@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangleUnitTests", "RectangleUnitTests\RectangleUnitTests.csproj", "{E97796E3-A22F-463D-8BF2-DA44322441A2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintStatistics", "PrintStatistics\PrintStatistics.csproj", "{07B9AEF0-19A7-4BA1-AAB3-3A5809478875}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintStatisticsTests", "PrintStatisticsTests\PrintStatisticsTests.csproj", "{71C7A9AB-DCF2-48DA-BF83-B64270151924}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rectangle", "Rectangle\Rectangle.csproj", "{8A360AC7-B732-4CDA-9A25-C4708DB0ED3A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Figure", "Figure\Figure.csproj", "{8A360AC7-B732-4CDA-9A25-C4708DB0ED3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FigureUnitTests", "FigureUnitTests\FigureUnitTests.csproj", "{E97796E3-A22F-463D-8BF2-DA44322441A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07B9AEF0-19A7-4BA1-AAB3-3A5809478875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07B9AEF0-19A7-4BA1-AAB3-3A5809478875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07B9AEF0-19A7-4BA1-AAB3-3A5809478875}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -31,6 +27,10 @@ Global
 		{8A360AC7-B732-4CDA-9A25-C4708DB0ED3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A360AC7-B732-4CDA-9A25-C4708DB0ED3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A360AC7-B732-4CDA-9A25-C4708DB0ED3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97796E3-A22F-463D-8BF2-DA44322441A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
