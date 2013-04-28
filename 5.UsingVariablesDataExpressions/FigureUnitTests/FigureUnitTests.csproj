@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Rectangle\Rectangle.csproj">
+    <ProjectReference Include="..\Figure\Figure.csproj">
       <Project>{8a360ac7-b732-4cda-9a25-c4708db0ed3a}</Project>
       <Name>Rectangle</Name>
     </ProjectReference>

@@ -56,8 +56,8 @@ namespace RectangleUnitTests
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void NegativeHeightArgumentOutOfRangeException()
         {
-            double  width = -2,
-                    heigth = 2;
+            double  width = 2,
+                    heigth = -2;
 
             Figure testFigure = new Figure(width, heigth);
         }
