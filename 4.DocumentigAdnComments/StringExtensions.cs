@@ -8,7 +8,8 @@
     using System.Text;
     using System.Text.RegularExpressions;
     
-    //As this is a string Extension the input is clearly the string on which methods are applied. And also it wont be displayed
+    //As this is a string Extension the input is clearly the string on which methods are applied. 
+    //And also it wont be displayed
     //but for the sake of documentation I've included it
     /// <summary>
     /// Extensions to the String class. 
@@ -25,10 +26,13 @@
         {
             var md5Hash = MD5.Create();
 
+            // Convert the input string to a byte array and compute the hash.
             var data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
 
             var builder = new StringBuilder();
-                       
+
+            // Loop through each byte of the hashed data 
+            // and format each one as a hexadecimal string.
             for (int i = 0; i < data.Length; i++)
             {
                 builder.Append(data[i].ToString("x2"));
@@ -45,6 +49,7 @@
         public static bool ToBoolean(this string input)
         {
             var stringTrueValues = new[] { "true", "ok", "yes", "1", "да" };
+
             return stringTrueValues.Contains(input.ToLower());
         }
 
@@ -57,6 +62,7 @@
         {
             short shortValue;
             short.TryParse(input, out shortValue);
+
             return shortValue;
         }
 
@@ -69,6 +75,7 @@
         {
             int integerValue;
             int.TryParse(input, out integerValue);
+
             return integerValue;
         }
 
@@ -81,6 +88,7 @@
         {
             long longValue;
             long.TryParse(input, out longValue);
+
             return longValue;
         }
 
@@ -93,6 +101,7 @@
         {
             DateTime dateTimeValue;
             DateTime.TryParse(input, out dateTimeValue);
+
             return dateTimeValue;
         }
 
