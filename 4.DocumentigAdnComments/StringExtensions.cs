@@ -8,15 +8,18 @@
     using System.Text;
     using System.Text.RegularExpressions;
     
-
+    //As this is a string Extension the input is clearly the string on which methods are applied. And also it wont be displayed
+    //but for the sake of documentation I've included it
     /// <summary>
-    /// Extensions to the String class
-    /// </summary>
+    /// Extensions to the String class. 
+    /// </summary> 
+    /// <input>the string on which the extension method is applied</param>
     public static class StringExtensions
     {
         /// <summary>
         /// Computes Md5 Hash out of input string
-        /// </summary>
+        /// </summary>  
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>String of the computed hash</returns>
         public static string ToMd5Hash(this string input)
         {
@@ -36,7 +39,8 @@
 
         /// <summary>
         /// Parses a string to a boolean if possible
-        /// </summary>
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>True if the string is humanly understandable yes. Otherwise returns false</returns>
         public static bool ToBoolean(this string input)
         {
@@ -47,6 +51,7 @@
         /// <summary>
         /// Parses string to short
         /// </summary>
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>short value if successful and 0 if not</returns>
         public static short ToShort(this string input)
         {
@@ -57,7 +62,8 @@
 
         /// <summary>
         /// Parses string to integer
-        /// </summary>
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>integer value of string if successful and 0 if not</returns>
         public static int ToInteger(this string input)
         {
@@ -69,6 +75,7 @@
         /// <summary>
         /// Parses string to long value
         /// </summary>
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>long value of string if successful and 0 if not</returns>
         public static long ToLong(this string input)
         {
@@ -79,7 +86,8 @@
 
         /// <summary>
         /// Parses string to DateTime value
-        /// </summary>
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>DateTime value of string if successful and 01.01.00 00:00 if not</returns>
         public static DateTime ToDateTime(this string input)
         {
@@ -90,7 +98,8 @@
 
         /// <summary>
         /// Capitalize first letter of string
-        /// </summary>
+        /// </summary>  
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>the new string with capital first Letter  or null if string is null </returns>
         public static string CapitalizeFirstLetter(this string input)
         {
@@ -104,11 +113,12 @@
 
         /// <summary>
         /// Returns a string in between two other substrings
-        /// </summary>
+        /// </summary> 
+        /// <param name="input">The string on which the extension method is applied</param>
         /// <param name="startString">The start point</param>
         /// <param name="endString">The end point</param>
         /// <param name="startFrom">The index to start from or 0 if not specified</param>
-        /// <returns></returns>
+        /// <returns>Substring</returns>
         public static string GetStringBetween(this string input, string startString, string endString, int startFrom = 0)
         {
             input = input.Substring(startFrom);
@@ -134,8 +144,9 @@
         }
 
         /// <summary>
-        /// Converts cyrylic letters to latin 
-        /// </summary>
+        /// Converts cyrillic letters to latin 
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>A new string with only latin letters</returns>
         public static string ConvertCyrillicToLatinLetters(this string input)
         {
@@ -160,9 +171,10 @@
         }
 
         /// <summary>
-        /// Converts latin letters to cyrilic 
-        /// </summary>
-        /// <returns>A new string with only cyrilic letters</returns>
+        /// Converts latin letters to cyrillic 
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
+        /// <returns>A new string with only cyrillic letters</returns>
         public static string ConvertLatinToCyrillicKeyboard(this string input)
         {
             var latinLetters = new[]
@@ -189,7 +201,8 @@
 
         /// <summary>
         /// Replaces all non-valid username chars in a string
-        /// </summary>
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>The corrected string</returns>
         public static string ToValidUsername(this string input)
         {
@@ -199,17 +212,21 @@
 
         /// <summary>
         /// Replaces all non-valid filename chars in a string
-        /// </summary>
-        /// <param name="input"></param>
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
         /// <returns>The corrected string</returns>
         public static string ToValidLatinFileName(this string input)
         {
             input = input.Replace(" ", "-").ConvertCyrillicToLatinLetters();
             return Regex.Replace(input, @"[^a-zA-z0-9_\.\-]+", string.Empty);
         }
+
         /// <summary>
         /// Returns first character of string
-        /// </summary>        
+        /// </summary>  
+        /// <param name="input">the string on which the extension method is applied</param>  
+        /// <param name="charsCount">Number specifying how many charachters to return</param>
+        /// <returns>First n(number speciffied by charsCount) charachters</returns>
         public static string GetFirstCharacters(this string input, int charsCount)
         {
             return input.Substring(0, Math.Min(input.Length, charsCount));
@@ -217,8 +234,9 @@
 
         /// <summary>
         /// Gets the extension of filename
-        /// </summary>
-        /// <returns>File extension or emty string if the string is not a file nam</returns>
+        /// </summary> 
+        /// <param name="fileName">the string on which the extension method is applied</param>
+        /// <returns>File extension or empty string if the string is not a file nam</returns>
         public static string GetFileExtension(this string fileName)
         {
             if (string.IsNullOrWhiteSpace(fileName))
@@ -237,7 +255,8 @@
 
         /// <summary>
         /// Gets what type of data is contained in a file with given extension
-        /// </summary>
+        /// </summary> 
+        /// <param name="fileExtension">the string on which the extension method is applied</param>
         /// <returns>Data Type </returns>
         public static string ToContentType(this string fileExtension)
         {
@@ -265,7 +284,9 @@
 
         /// <summary>
         /// Converts string to a byte array
-        /// </summary>
+        /// </summary> 
+        /// <param name="input">the string on which the extension method is applied</param>
+        /// <returns>"input" as a byte array</returns>
         public static byte[] ToByteArray(this string input)
         {
             var bytesArray = new byte[input.Length * sizeof(char)];
