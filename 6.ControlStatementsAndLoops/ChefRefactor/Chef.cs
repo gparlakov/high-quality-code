@@ -34,9 +34,14 @@ namespace ChefRefactor
             //...
         }
 
-        private void Cut(Vegetable potato)
+        private void Cut(Vegetable vegetable)
         {
             //...
+        }
+
+        private void Peel(Vegetable vegetable)
+        {
+            //..
         }
     }
 }

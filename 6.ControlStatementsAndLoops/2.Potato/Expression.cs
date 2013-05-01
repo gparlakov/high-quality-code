@@ -10,10 +10,10 @@ namespace _2.Potato
     {
         bool isXinRange = IsInRange(x, MinX, MaxX);
         bool isYinRange = IsInRange(y, MinY, MaxY);
-        bool shouldVisitCell = ShouldVisitCell(x, y);
+        bool isVisited = VisitedCells[x, y];
 
 
-        if (isXinRange && isYinRange && shouldVisitCell)
+        if (isXinRange && isYinRange && !isVisited)
         {
             VisitCell();
         }
