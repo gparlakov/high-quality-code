@@ -3,11 +3,17 @@ using System.Linq;
 
 namespace Methods
 {
-    /// <summary>
-    /// Contains geometrical methods.
-    /// </summary>
     public static class Geometry
     {        
+        
+        /// <summary>
+        /// Calculates a tringle's area by given three sides
+        /// </summary>
+        /// <param name="a">Side a</param>
+        /// <param name="b">Side b</param>
+        /// <param name="c">Side c</param>
+        /// <returns>Area of triange</returns>
+        /// <exception cref="ArgumentException">In case <paramref name="a"/> <paramref name="b"/> and <paramref name="c"/> are negative or can't form a triangle</exception>
         public static double CalcTriangleArea(double a, double b, double c)
         {
             if (a <= 0 || b <= 0 || c <= 0)

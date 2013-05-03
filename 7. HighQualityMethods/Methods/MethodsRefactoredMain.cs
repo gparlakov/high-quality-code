@@ -13,12 +13,17 @@ namespace Methods
                 double x2 = 3;
                 double y2 = 2.5;
 
-                Point pointX1 = new Point(x1, y1);
-                Point pointX2 = new Point(x2, y2);
+                Point pointA = new Point(x1, y1);
+                Point pointB = new Point(x2, y2);
+                Point pointC = new Point(5.1, 6.2);
 
-                Line line = new Line(pointX1, pointX2);
+                Line line = new Line(pointA, pointB);
 
-                Console.WriteLine(Geometry.CalcTriangleArea(3, 4, 5));
+                double sideA = Geometry.CalcDistance(pointA, pointB);
+                double sideB = Geometry.CalcDistance(pointB, pointC);
+                double sideC = Geometry.CalcDistance(pointC, pointA);
+                
+                Console.WriteLine(Geometry.CalcTriangleArea(sideA, sideB, sideC));
 
                 Console.WriteLine(Utilities.DigitAsWord(5));
 
@@ -29,7 +34,7 @@ namespace Methods
                 Console.Write(".....");
                 Utilities.PrintAlligned(2.30, -18);
 
-                Console.WriteLine(Geometry.CalcDistance(pointX1, pointX2));
+                Console.WriteLine(Geometry.CalcDistance(pointA, pointB));
 
                 bool horizontal;
                 bool vertical;
