@@ -22,7 +22,7 @@ namespace Methods
                 double sideA = Geometry.CalcDistance(pointA, pointB);
                 double sideB = Geometry.CalcDistance(pointB, pointC);
                 double sideC = Geometry.CalcDistance(pointC, pointA);
-                
+                Geometry.CalcTriangleArea(5,6,7);
                 Console.WriteLine(Geometry.CalcTriangleArea(sideA, sideB, sideC));
 
                 Console.WriteLine(Utilities.DigitAsWord(5));

@@ -91,8 +91,9 @@ namespace Methods
         /// </summary>
         /// <param name="obj">Object to print</param>
         /// <param name="columnWidth">Width of column in whitch to align</param>
+        /// 
         public static void PrintAlligned(object obj, int columnWidth)
-        {
+        {            
             Console.WriteLine("{0," + columnWidth + "}", obj);
         }
     }
