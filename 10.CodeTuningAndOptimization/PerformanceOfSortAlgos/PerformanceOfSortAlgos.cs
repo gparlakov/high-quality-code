@@ -27,7 +27,8 @@ namespace PerformanceOfSortAlgos
 
         private static List<T> QuickSort<T>(IList<T> unsorted) where T : IComparable<T>
         {
-            if (unsorted.Count <= 1)
+            if (unsorted.Count <= 1 || 
+                unsorted[0].CompareTo(unsorted[unsorted.Count - 1]) == 0)
             {
                 return unsorted.ToList<T>();
             }
