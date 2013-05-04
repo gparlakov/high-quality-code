@@ -31,8 +31,7 @@ namespace Methods
 
                 Utilities.PrintFloat(1.3);
                 Utilities.PrintAsPercent(0.75);
-                Console.Write(".....");
-                Utilities.PrintAlligned(2.30, -18);
+                Utilities.PrintAlligned(2.30, 8);
 
                 Console.WriteLine(Geometry.CalcDistance(pointA, pointB));
 
