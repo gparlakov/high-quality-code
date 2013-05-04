@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace PerformanceOfSortAlgos
 {
@@ -45,6 +46,55 @@ namespace PerformanceOfSortAlgos
             T oldX = x;
             x = y;
             y = oldX;
+        }
+
+        public static List<T> QuickSort<T>(IList<T> unsorted) where T : IComparable<T>
+        {
+            if (unsorted.Count <= 1 ||
+                unsorted[0].CompareTo(unsorted[unsorted.Count - 1]) == 0)
+            {
+                return unsorted.ToList<T>();
+            }
+
+            T pivot = unsorted[0];
+            List<T> left = new List<T>();
+            List<T> right = new List<T>();
+            for (int i = 1; i < unsorted.Count; i++)
+            {
+                if (unsorted[i].CompareTo(pivot) < 0)
+                {
+                    left.Add(unsorted[i]);
+                }
+                else
+                {
+                    right.Add(unsorted[i]);
+                }
+            }
+            
+            left = QuickSort<T>(left);
+            right = QuickSort<T>(right);
+            left.Add(pivot);
+            left.AddRange(right);
+
+            return left;
+        }
+
+        public static T[] InsertionSort<T>(T[] unsorted) where T : IComparable<T>
+        {
+            T[] sorted = new T[unsorted.Length];
+
+            for (int i = 0; i < unsorted.Length; i++)
+            {
+                for (int j = 1; j < unsorted.Length; j++)
+                {
+                    if (unsorted[i] > unsorted[j])
+                    {
+
+                    }
+                }
+            }
+
+            return sorted;
         }
     }
 }

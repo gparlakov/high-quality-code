@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceOfSimpeMathActions", "PerformanceOfSimpeMathActions\PerformanceOfSimpeMathActions.csproj", "{3F2DD21F-5D36-4EA5-9A08-3AEE58200F3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceMathMethods", "PerformanceMathMethods\PerformanceMathMethods.csproj", "{6CEB68D1-598F-4E0F-A8F0-220C5BB139B3}"
