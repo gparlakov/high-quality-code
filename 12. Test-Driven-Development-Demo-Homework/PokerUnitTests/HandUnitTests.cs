@@ -74,6 +74,39 @@ namespace PokerUnitTests
             Assert.AreEqual("♣A ♣4 ♥A ♥3 ♠8", hand.ToString());
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TestHandCreationWithSixCards_ExpectException()
+        {
+            IList<ICard> cards = GetTestHandSixCards();
+            Hand hand = new Hand(cards);           
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void TestHandCreationWithFourCards_ExpectException()
+        {
+            IList<ICard> cards = GetTestHandFourCards();
+            Hand hand = new Hand(cards);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestHandCreationWith2ExactSameCardsExpectException()
+        {
+            IList<ICard> cards = GetTestHandPairWithTwoExactSameCards();
+            Hand hand = new Hand(cards);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void TestHandCreationWithNull_ExpectException()
+        {
+            IList<ICard> cards = GetTestHandNull();
+            Hand hand = new Hand(cards);
+        }
+
+        #region private methods
         private IList<ICard> GetTestHandPairAces()
         {
             List<ICard> hand = new List<ICard> {
@@ -87,9 +120,9 @@ namespace PokerUnitTests
             return hand;
         }
 
-        private List<Card> GetTestHandPairWithTwoExactSameCards()
+        private List<ICard> GetTestHandPairWithTwoExactSameCards()
         {
-            List<Card> hand = new List<Card> {
+            List<ICard> hand = new List<ICard> {
                 new Card(CardFace.Ace, CardSuit.Clubs),
                 new Card(CardFace.Four,CardSuit.Clubs),
                 new Card(CardFace.Ace, CardSuit.Clubs),
@@ -100,16 +133,16 @@ namespace PokerUnitTests
             return hand;
         }
 
-        private List<Card> GetTestHandNull()
+        private IList<ICard> GetTestHandNull()
         {
-            List<Card> hand = null;
+            List<ICard> hand = null;
 
             return hand;
         }
 
-        private List<Card> GetTestHandSixCards()
+        private List<ICard> GetTestHandSixCards()
         {
-            List<Card> hand = new List<Card> {
+            List<ICard> hand = new List<ICard> {
                 new Card(CardFace.Ace, CardSuit.Clubs),
                 new Card(CardFace.Four,CardSuit.Clubs),
                 new Card(CardFace.Ace, CardSuit.Hearts),
@@ -121,9 +154,9 @@ namespace PokerUnitTests
             return hand;
         }
 
-        private List<Card> GetTestHandFourCards()
+        private List<ICard> GetTestHandFourCards()
         {
-            List<Card> hand = new List<Card> {
+            List<ICard> hand = new List<ICard> {
                 new Card(CardFace.Ace, CardSuit.Clubs),
                 new Card(CardFace.Four,CardSuit.Clubs),
                 new Card(CardFace.Ace, CardSuit.Hearts),
@@ -132,5 +165,6 @@ namespace PokerUnitTests
 
             return hand;
         }
+        #endregion
     }
 }
