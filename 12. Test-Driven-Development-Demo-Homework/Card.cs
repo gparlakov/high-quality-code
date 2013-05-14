@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Text;
 
 namespace Poker
 {
     public class Card : ICard
     {
-        public CardFace Face { get; private set; }
-        public CardSuit Suit { get; private set; }
-
         public Card(CardFace face, CardSuit suit)
         {
             this.Face = face;
             this.Suit = suit;
         }
 
+        public CardFace Face { get; private set; }
+
+        public CardSuit Suit { get; private set; }
+
         public override string ToString()
         {
-            String result = GetCardSuitSymbol() + GetCardFace();
+            String result = string.Format("{0}{1}", this.GetCardSuitSymbol(), this.GetCardFace());
 
             return result;
         }
@@ -36,10 +36,9 @@ namespace Poker
             return face;
         }
 
-
         private char GetCardSuitSymbol()
         {
-            char suitSymbol='0';
+            char suitSymbol = '0';
         
             switch (this.Suit)
             {
@@ -50,8 +49,8 @@ namespace Poker
                     }
                 case CardSuit.Diamonds:
                     {
-                    suitSymbol = '♦';
-                    break;
+                        suitSymbol = '♦';
+                        break;
                     }
                 case CardSuit.Hearts:
                     {
@@ -70,7 +69,6 @@ namespace Poker
             }
 
             return suitSymbol;
-
         }
     }
 }

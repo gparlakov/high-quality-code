@@ -10,7 +10,8 @@ namespace Poker
             ICard card = new Card(CardFace.Ace, CardSuit.Clubs);
             Console.WriteLine(card);
 
-            IHand hand = new Hand(new List<ICard>() { 
+            IHand hand = new Hand(new List<ICard>()
+            {
                 new Card(CardFace.Ace, CardSuit.Clubs),
                 new Card(CardFace.Ace, CardSuit.Diamonds),
                 new Card(CardFace.King, CardSuit.Hearts),
