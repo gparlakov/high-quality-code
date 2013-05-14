@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Poker;
@@ -36,6 +34,7 @@ namespace PokerUnitTests
         //}
 
         #region Additional test attributes
+        
         //
         // You can use the following additional attributes as you write your tests:
         //
@@ -55,56 +54,55 @@ namespace PokerUnitTests
         // [TestCleanup()]
         // public void MyTestCleanup() { }
         //
-        #endregion
 
+        #endregion
+        
         [TestMethod]
         public void TestCardToStringASpades()
         {
             Card aceSpades = new Card(CardFace.Ace, CardSuit.Spades);
-
+        
             Assert.AreEqual("♠A", aceSpades.ToString());
         }
-
+        
         [TestMethod]
         public void TestCardToStringTenHears()
         {
             Card tenHearts = new Card(CardFace.Ten, CardSuit.Hearts);
-
+        
             Assert.AreEqual("♥10", tenHearts.ToString());
         }
-
+        
         [TestMethod]
         public void TestCardToStringTwoDiamonds()
         {
             Card twoDiamonds = new Card(CardFace.Two, CardSuit.Diamonds);
-
+        
             Assert.AreEqual("♦2", twoDiamonds.ToString());
         }
         
-
         [TestMethod]
         public void TestCardToStringJackClubs()
         {
             Card jackClubs = new Card(CardFace.Jack, CardSuit.Clubs);
-
+        
             Assert.AreEqual("♣J", jackClubs.ToString());
         }
-
+        
         [TestMethod]
         public void TestCardToStringKingClubs()
         {
             Card jackClubs = new Card(CardFace.King, CardSuit.Clubs);
-
+        
             Assert.AreEqual("♣K", jackClubs.ToString());
         }
-
+        
         [TestMethod]
         public void TestCardToStringQueenHearts()
         {
             Card tenHearts = new Card(CardFace.Queen, CardSuit.Hearts);
-
+        
             Assert.AreEqual("♥Q", tenHearts.ToString());
         }
-        
     }
 }
