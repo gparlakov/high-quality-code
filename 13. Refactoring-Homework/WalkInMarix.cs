@@ -3,7 +3,7 @@ using System.IO;
 
 namespace MatrixWalk
 {
-    class WalkInMarix
+    public class WalkInMarix
     {
         static void change(ref int dx, ref int dy)
         {
@@ -122,97 +122,118 @@ namespace MatrixWalk
             }
         }
 
-        static void Main(string[] args)
+        public static void Main()
         {
-            StringReader stringReader = new StringReader("3" + Environment.NewLine);
-            Console.SetIn(stringReader);
-
-            StringWriter stringWriter = new StringWriter();
-            Console.SetOut(stringWriter);
-
-            Console.WriteLine("Enter a positive number ");
-            string input = Console.ReadLine();
-            int n = 0;
-            while (!int.TryParse(input, out n) || n < 0 || n > 100)
+            //StringReader stringReader = new StringReader("3" + Environment.NewLine);
+            //Console.SetIn(stringReader);
+            //var console = Console.Out;
+            //StringWriter stringWriter = new StringWriter();
+            //Console.SetOut(stringWriter);
+            StreamWriter fileWriter = new StreamWriter("../../test.out.in.10.txt");
+            Console.SetOut(fileWriter);
+            using (fileWriter)
             {
-                Console.WriteLine("You haven't entered a correct positive number");
-                input = Console.ReadLine();
-            }
+
+                //Console.WriteLine("Enter a positive number ");
+                //int n = ReadNumber();
+
+                //while (n <= 0 || n > 100)
+                //{
+                //    n = ReadNumber();
+                //    Console.WriteLine("You haven't entered a correct positive number");
+                //}
 
 
-            //int n = 10;
-            int step = n, 
-                k = 1, 
-                i = 0, 
-                j = 0, 
-                dx = 1, 
-                dy = 1;
+                int n = 10;
+                int step = n,
+                    k = 1,
+                    i = 0,
+                    j = 0,
+                    dx = 1,
+                    dy = 1;
 
-            int[,] matrix = new int[n, n];
-
-            while (true)
-            { //malko e kofti tova uslovie, no break-a raboti 100% : )
-                matrix[i, j] = k;
-
-                if (!proverka(matrix, i, j))
-                {
-                    break;
-                }// prekusvame ako sme se zadunili
-
-                if (i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0)
-                {
-                    while ((i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0))
-                    {
-                        change(ref dx, ref dy);
-                    }
-                }
-
-                i += dx; 
-                j += dy; 
-                k++;
-            }
-
-            for (int p = 0; p < n; p++)
-            {
-                for (int q = 0; q < n; q++)
-                {
-                    Console.Write("{0,3}", matrix[p, q]);
-                }
-                Console.WriteLine();                
-            }
-
-            find_cell(matrix, out i, out j);
-            if (i != 0 && j != 0)
-            { // taka go napravih, zashtoto funkciqta ne mi davashe da ne si definiram out parametrite
-                dx = 1; dy = 1;
+                int[,] matrix = new int[n, n];
 
                 while (true)
                 { //malko e kofti tova uslovie, no break-a raboti 100% : )
                     matrix[i, j] = k;
+
                     if (!proverka(matrix, i, j))
                     {
                         break;
                     }// prekusvame ako sme se zadunili
+
                     if (i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0)
                     {
                         while ((i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0))
+                        {
                             change(ref dx, ref dy);
+                        }
                     }
-                    i += dx; j += dy; k++;
+
+                    i += dx;
+                    j += dy;
+                    k++;
                 }
-            }
-            
-            for (int pp = 0; pp < n; pp++)
-            {
-                for (int qq = 0; qq < n; qq++)
+
+                //for (int p = 0; p < n; p++)
+                //{
+                //    for (int q = 0; q < n; q++)
+                //    {
+                //        Console.Write("{0,3}", matrix[p, q]);
+                //    }
+                //    Console.WriteLine();                
+                //}
+
+                find_cell(matrix, out i, out j);
+
+                if (i != 0 && j != 0)
+                { // taka go napravih, zashtoto funkciqta ne mi davashe da ne si definiram out parametrite
+                    dx = 1; dy = 1;
+
+                    while (true)
+                    { //malko e kofti tova uslovie, no break-a raboti 100% : )
+                        matrix[i, j] = k;
+
+                        if (!proverka(matrix, i, j))
+                        {
+                            break;
+                        }// prekusvame ako sme se zadunili
+
+                        if (i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0)
+                        {
+                            while ((i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0))
+                                change(ref dx, ref dy);
+                        }
+                        i += dx; 
+                        j += dy; 
+                        k++;
+                    }
+                }
+
+                for (int pp = 0; pp < n; pp++)
                 {
-                    Console.Write("{0,3}", matrix[pp, qq]);
+                    for (int qq = 0; qq < n; qq++)
+                    {
+                        Console.Write("{0,5}", matrix[pp, qq]);
+                    }
+
+                    Console.WriteLine();
                 }
 
-                Console.WriteLine();
-            }
 
-            Console.WriteLine(stringWriter.ToString());
+                //Console.SetOut(console);
+                //Console.WriteLine(stringWriter.ToString());
+            }
+        }
+
+        private static int ReadNumber()
+        {
+            string input = Console.ReadLine();
+            int n = 0;
+            int.TryParse(input, out n);
+
+            return n;
         }
     }
 }
