@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MatrixUnitTests</RootNamespace>
     <AssemblyName>MatrixUnitTests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MarixWalk.csproj">
-      <Project>{4d520899-7061-4eaa-b67e-d14ee8b30462}</Project>
-      <Name>MarixWalk</Name>
+    <ProjectReference Include="..\MatrixWalk.csproj">
+      <Project>{4D520899-7061-4EAA-B67E-D14EE8B30462}</Project>
+      <Name>MatrixWalk</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

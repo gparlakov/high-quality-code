@@ -1,11 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarixWalk", "MarixWalk.csproj", "{4D520899-7061-4EAA-B67E-D14EE8B30462}"
-EndProject
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixUnitTests", "MatrixUnitTests\MatrixUnitTests.csproj", "{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{77165E3A-7AB8-4EBF-A8D8-A257F8E984EF}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Matrix.vsmdi = Matrix.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixWalk", "MatrixWalk.csproj", "{4D520899-7061-4EAA-B67E-D14EE8B30462}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Matrix.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -15,6 +25,17 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|x86.Build.0 = Debug|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|x86.ActiveCfg = Release|Any CPU
 		{4D520899-7061-4EAA-B67E-D14EE8B30462}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{4D520899-7061-4EAA-B67E-D14EE8B30462}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{4D520899-7061-4EAA-B67E-D14EE8B30462}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -25,16 +46,6 @@ Global
 		{4D520899-7061-4EAA-B67E-D14EE8B30462}.Release|Mixed Platforms.Build.0 = Release|x86
 		{4D520899-7061-4EAA-B67E-D14EE8B30462}.Release|x86.ActiveCfg = Release|x86
 		{4D520899-7061-4EAA-B67E-D14EE8B30462}.Release|x86.Build.0 = Release|x86
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{65F780E3-888C-48FA-98CF-DDDE8DCE4A47}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
