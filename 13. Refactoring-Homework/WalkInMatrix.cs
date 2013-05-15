@@ -16,7 +16,6 @@ namespace MatrixWalk
                 Console.WriteLine("You haven't entered a correct positive number");
             }
 
-            //int n = 10;
             int nextNumber = 1,
                 i = 0,
                 j = 0,
@@ -25,8 +24,9 @@ namespace MatrixWalk
 
             int[,] matrix = new int[n, n];
 
+            //first fills the diagonal and walls and upper triangle
             while (true)
-            { //malko e kofti tova uslovie, no break-a raboti 100% : )
+            {
                 
                 matrix[i, j] = nextNumber;
 
@@ -34,7 +34,7 @@ namespace MatrixWalk
                 {
                     nextNumber++;
                     break;
-                }// prekusvame ako sme se zadunili
+                }
 
                 UpdateDirection(i, n, j, matrix, ref dx, ref dy);
 
@@ -43,14 +43,15 @@ namespace MatrixWalk
                 nextNumber++;
             }
 
+            //finds an empty cell from the other triangle
             FindFirstEmptyCell(matrix, out i, out j);
 
             if (i != 0 && j != 0)
-            { // taka go napravih, zashtoto funkciqta ne mi davashe da ne si definiram out parametrite
+            { 
                 dx = 1; dy = 1;
 
                 while (true)
-                { //malko e kofti tova uslovie, no break-a raboti 100% : )
+                { 
                     matrix[i, j] = nextNumber;
 
                     if (IsDeadEnd(matrix, i, j))
@@ -66,6 +67,7 @@ namespace MatrixWalk
                 }
             }
 
+            //printout the matrix
             for (int row = 0; row < n; row++)
             {
                 for (int col = 0; col < n; col++)
@@ -75,7 +77,6 @@ namespace MatrixWalk
 
                 Console.WriteLine();
             }
-
         }
 
         static bool IsDeadEnd(int[,] arr, int x, int y)
@@ -130,9 +131,9 @@ namespace MatrixWalk
 
         private static void UpdateDirection(int i, int n, int j, int[,] matrix, ref int dx, ref int dy)
         {
-            if (i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0)
+            if (!IsInsideMatrix(matrix, i + dx, j + dy)|| matrix[i + dx, j + dy] != 0)
             {
-                while ((i + dx >= n || i + dx < 0 || j + dy >= n || j + dy < 0 || matrix[i + dx, j + dy] != 0))
+                while (!IsInsideMatrix(matrix, i + dx, j + dy) || matrix[i + dx, j + dy] != 0)
                 {
                     ChangeDirection(ref dx, ref dy);
                 }
