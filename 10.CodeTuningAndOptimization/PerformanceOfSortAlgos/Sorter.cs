@@ -87,9 +87,9 @@ namespace PerformanceOfSortAlgos
             {
                 for (int j = 1; j < unsorted.Length; j++)
                 {
-                    if (unsorted[i] > unsorted[j])
+                    if (unsorted[i].CompareTo(unsorted[j]) > 0)
                     {
-
+                        //....TODO
                     }
                 }
             }

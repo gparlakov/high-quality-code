@@ -27,14 +27,14 @@ namespace PerformanceMathMethods
             Console.WriteLine(Sqrt((decimal)value, ref timer));
 
             Console.WriteLine(
-                "Time in milliseconds for Sqrt {0} times with float," +
+                "Time in milliseconds for Natural algorithm {0} times with float," +
                 " double and decimal(in that order) values.",
                 Repetitions); Console.WriteLine(NaturalLogarithm(value, ref timer));
             Console.WriteLine(NaturalLogarithm((double)value, ref timer));
             Console.WriteLine(NaturalLogarithm((decimal)value, ref timer));
 
             Console.WriteLine(
-                "Time in milliseconds for Sqrt {0} times with float," +
+                "Time in milliseconds for Sinus {0} times with float," +
                 " double and decimal(in that order) values.",
                 Repetitions); Console.WriteLine(Sin(value, ref timer));
             Console.WriteLine(Sin((double)value, ref timer));
